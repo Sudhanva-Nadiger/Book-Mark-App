@@ -1,0 +1,243 @@
+*{
+  margin : 0;
+  border : 0;
+  box-sizing: border-box;
+}
+
+.App{
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-bar{
+  width : 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(101, 214, 192);
+}
+
+.website-name{
+  color: #fff;
+  text-shadow: 1px 1px 2px rgb(94, 202, 210), 0 0 1em rgb(41, 181, 220), 0 0 0.2em rgb(73, 153, 203);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap : 5px;
+}
+
+.links{
+  margin-right: 3rem;
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.links::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    border-radius: 50px;
+    transition: width .3s ease-in-out;
+}
+
+.links:hover{
+  color: darkcyan;
+}
+
+.links:hover::after{
+  width: 100%;
+}
+
+.nav-bar img{
+  width : 8rem;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.bookmark-input{
+  width : 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap : 20px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 3px 15px;
+  border-radius: 10px;
+  padding: 2rem;
+  overflow-y: auto 
+}
+
+@media screen and (max-height: 1000000000000000000px){
+    .helper-div{
+      position: absolute;
+      height: 80vh;
+    }
+
+    .modal{
+      position: absolute;
+      height: 80vh;
+    }
+
+    .bookmark-input{
+      position: absolute;
+      height: 90vh;
+    }
+}
+
+.bookmark-input .title{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap : 10px;
+}
+
+input{
+  width : 200px;
+  padding: 10px;
+  font-weight: bold;
+  border: 2px solid rgb(78, 76, 76);
+  border-radius: 15px;
+}
+
+.tags-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap : 10px;
+}
+
+.display-tags{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap : 15px;
+}
+
+.link-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap : 10px;
+}
+
+.description-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap : 10px;
+}
+
+.addToBookMark{
+  cursor: pointer;
+  background-color:#0275d8;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.addToBookMark:hover{
+  opacity: 0.9;
+}
+
+.newbookmark{
+  display: flex;
+  align-items: center;
+  gap : 5px;
+  justify-content:space-evenly;
+  color: #fff;
+  height: 50%;
+  width : 25%;
+  background-color: rgb(101, 214, 192);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: -30px;
+  padding: 10px;
+  text-shadow: 2px 2px 2px rgb(64, 63, 63);
+}
+
+@media only screen and (max-width: 850px){
+  .nav-bar h1{
+    display: none;
+  }
+
+  .newbookmark{
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .newbookmark{
+    flex-direction: column;
+    width : 75%;
+    height: 30%;
+    margin-top: 0px;
+  }
+  .nav-bar{
+    padding: 10px;
+  }
+
+  .links{
+    margin-right: 0;
+  }
+
+  .App{
+    gap : 5px;
+  }
+
+  .bookmark-input{
+    width :90%;
+  }
+
+  input{
+    width : 100%;
+  }
+}
+
+.newbookmark button{
+  cursor: pointer;
+  font-weight: bolder;
+  height: 30px;
+  width : 30px;
+  border-radius: 50%;
+}
+
+.newbookmark button:hover{
+  background-color: rgb(226, 255, 249);
+}
+
+.modal{
+  background-color: rgb(129, 219, 204);
+  height: 100%;
+  width : 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.helper-div{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.helper-div.show{
+  visibility: visible;
+  opacity: 1;
+}
