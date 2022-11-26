@@ -10,10 +10,16 @@ const BookMarkSchema = new mongoose.Schema({
     },
     bookmarkUrl:{
         type : String,
-        required: true
+        required: true,
+        default :"https://www.google.com/",
+        unique : true
     },
     bookmarkDescription:{
         type : String
+    },
+    starred:{
+        type : Boolean,
+        default : false
     }
 })
 

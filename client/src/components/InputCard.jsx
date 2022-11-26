@@ -4,7 +4,7 @@ import { faTags, faLink } from '@fortawesome/free-solid-svg-icons'
 import TagBox from './TagBox'
 import Axios from "axios"
 
-const InputCard = ({ setOpen,conditionalClassName }) => {
+const InputCard = ({ setOpen, conditionalClassName }) => {
   const [title, setTitle] = useState("");
   const [tagName, setTagName] = useState("")
   const [link, setLink] = useState("")
@@ -16,31 +16,38 @@ const InputCard = ({ setOpen,conditionalClassName }) => {
   }
 
   function handleSubmit() {
-      Axios.post("http://localhost:3001/insert",{
-        bookmarkTitle : title,
-        bookmarkTags : tags,
-        bookmarkLink : link,
-        bookmarkDescription: description
-      })
+    Axios.post("http://localhost:3001/insert", {
+      bookmarkTitle: title,
+      bookmarkTags: tags,
+      bookmarkLink: link,
+      bookmarkDescription: description
+    })
 
-      setTitle("");
-      setDescription("")
-      setTags([])
-      setLink("")
-      setTagName("")
+    setTitle("");
+    setDescription("")
+    setTags([])
+    setLink("")
+    setTagName("")
   }
 
   return (
     <div className="modal">
       <div className='bookmark-input'>
         <button style={{
-          fontSize:"20px",
+          fontSize: "20px",
           fontWeight: "bold",
           height: "50px",
           width: "50px",
           borderRadius: "50%",
-          cursor:"pointer"
-        }} onClick={() => setOpen(false)}>×</button>
+          cursor: "pointer"
+        }} onClick={() => {
+          setOpen(false)
+          setTitle("");
+          setDescription("")
+          setTags([])
+          setLink("")
+          setTagName("")
+          }}>×</button>
         {/* title */}
         <div className="title">
           <h3>Title of the book mark</h3>
