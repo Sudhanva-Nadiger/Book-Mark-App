@@ -12,8 +12,8 @@ const SearchBar = () => {
                 <input value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)} type="text" className="search-text" placeholder='search book mark..' />
             </div>
             <div className="btn-wrapper">
-                <button className='search-btn'>Search by title</button>
-                <button className='search-btn'>Search by tag</button>
+                <button name="title" className='search-btn'>Search by title</button>
+                <button name="tag" className='search-btn'>Search by tag</button>
             </div>
         </>
     )

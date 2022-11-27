@@ -20,7 +20,7 @@ const InputCard = ({ setOpen, conditionalClassName }) => {
       bookmarkTitle: title,
       bookmarkTags: tags,
       bookmarkLink: link,
-      bookmarkDescription: description
+      bookmarkDescription: description,
     })
 
     setTitle("");
@@ -50,7 +50,12 @@ const InputCard = ({ setOpen, conditionalClassName }) => {
           }}>×</button>
         {/* title */}
         <div className="title">
-          <h3>Title of the book mark</h3>
+          <h3 style={{
+            display: "flex",
+            gap: "2px",
+            alignItems: "center",
+            justifyContent: "flex-start"
+          }}>Title of the book mark<sup>*</sup> <span style={{fontSize:"10px"}}> required</span></h3>
           <input type="text" value={title} placeholder="Enter the title.." onChange={handleTitleChange} />
         </div>
 
@@ -88,7 +93,7 @@ const InputCard = ({ setOpen, conditionalClassName }) => {
             justifyContent: "flex-start"
           }}>
             <FontAwesomeIcon icon={faLink} />
-            Link to the book mark
+            Link to the book mark<sup>*</sup> <span style={{fontSize:"10px"}}> required</span>
           </h3>
           <input type="text" placeholder='Url of the book mark..' value={link} onChange={(e) => { setLink(e.target.value) }} />
         </div>

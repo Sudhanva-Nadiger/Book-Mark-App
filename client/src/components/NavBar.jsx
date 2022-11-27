@@ -4,8 +4,8 @@ import "../App.css"
 
 const NavBar = () => {
   return (
-    <nav className='nav-bar'>
-        <div className='website-name'>
+    <nav className='navBar'>
+        <div className='websiteName'>
             <img src={logo} alt="logo" />
             <h1>Book Mark App</h1>
         </div>

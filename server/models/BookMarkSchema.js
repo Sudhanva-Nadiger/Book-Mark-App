@@ -8,7 +8,7 @@ const BookMarkSchema = new mongoose.Schema({
     bookmarkTags:{
         type : Array
     },
-    bookmarkUrl:{
+    bookmarkLink:{
         type : String,
         required: true,
         default :"https://www.google.com/",
@@ -23,5 +23,5 @@ const BookMarkSchema = new mongoose.Schema({
     }
 })
 
-const BookMarkModel = mongoose.model("BookMarkModel",BookMarkSchema);
-module.exports = BookMarkModel;
+const BookMarks = mongoose.model("BookMarks",BookMarkSchema);
+module.exports = BookMarks;
