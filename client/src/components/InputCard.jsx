@@ -4,7 +4,7 @@ import { faTags, faLink } from '@fortawesome/free-solid-svg-icons'
 import TagBox from './TagBox'
 import Axios from "axios"
 
-const InputCard = ({ setOpen, conditionalClassName }) => {
+const InputCard = ({ setOpen, setCards }) => {
   const [title, setTitle] = useState("");
   const [tagName, setTagName] = useState("")
   const [link, setLink] = useState("")
@@ -28,6 +28,12 @@ const InputCard = ({ setOpen, conditionalClassName }) => {
     setTags([])
     setLink("")
     setTagName("")
+    setCards((prev)=>{
+      return [...prev,{bookmarkTitle: title,
+        bookmarkTags: tags,
+        bookmarkLink: link,
+        bookmarkDescription: description,}]
+    })
   }
 
   return (

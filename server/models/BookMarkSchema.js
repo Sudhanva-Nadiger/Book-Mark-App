@@ -11,8 +11,6 @@ const BookMarkSchema = new mongoose.Schema({
     bookmarkLink:{
         type : String,
         required: true,
-        default :"https://www.google.com/",
-        unique : true
     },
     bookmarkDescription:{
         type : String

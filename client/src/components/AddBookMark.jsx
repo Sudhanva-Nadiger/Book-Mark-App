@@ -7,7 +7,7 @@ const AddBookMark = ({setOpen}) => {
     }
   return (
     <div className='newbookmark'>
-        <h3>Add new Book Mark here</h3>
+        <h3>Add new Book Mark</h3>
         <button onClick={handleClick}>+</button>
     </div>
   )

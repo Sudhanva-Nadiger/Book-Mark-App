@@ -24,10 +24,10 @@ app.post("/insert",async (req,res)=>{
     })
 
     try {
-        newBookMark.save();
+        await newBookMark.save();
         console.log("saved successfully")
         res.send("saved successFully")
-    } catch (error) {
+    } catch (err) {
         console.log(err);
     }
 
@@ -41,6 +41,38 @@ app.get("/read",async (req,res)=>{
 
         res.send(result)
     })
+})
+
+app.put("/update",async (req,res)=>{
+    const id = req.body.id
+    const updateCard = req.body.updatedCard
+
+    try {
+        await BookMarks.findById(id,async (err,updatedCard)=>{
+            updatedCard.bookmarkTitle = updateCard.bookmarkTitle
+            updatedCard.bookmarkTags = updateCard.bookmarkTags
+            updatedCard.bookmarkLink = updateCard.bookmarkLink
+            updatedCard.bookmarkDescription = updateCard.bookmarkDescription;
+            await updatedCard.save()
+            console.log("successfully upddated");
+            res.send("updated")
+        }).clone().catch(function(err){ console.log(err)})
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+})
+
+app.delete("/delete/:id", async (req,res)=>{
+    const id = (req.params.id);
+    console.log(id);
+    await BookMarks.findByIdAndRemove({_id : id},async (err, result)=>{
+        if(err){
+            console.log(err);
+        }
+    }).clone().catch(function(err){ console.log(err)})
+
+    res.send("deleted");
 })
 
 app.listen(3001,()=>{

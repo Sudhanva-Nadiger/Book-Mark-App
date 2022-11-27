@@ -25,7 +25,7 @@ function App() {
       <NavBar />
       <AddBookMark setOpen={setOpen} />
       <SearchBar />
-      <div className={open ? 'helper-div show' : "helper-div"} style={{ margin: "0", left: "0", position: "absolute" }}> <InputCard setOpen={setOpen} /> </div>
+      <div className={open ? 'helper-div show' : "helper-div"} style={{ margin: "0", left: "0", position: "absolute" }}> <InputCard setOpen={setOpen} setCards={setCards} /> </div>
       <div className="bookmarksCards-container">
         {
           cards.map((card,index)=>{

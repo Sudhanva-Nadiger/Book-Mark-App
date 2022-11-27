@@ -1,0 +1,22 @@
+.delete{
+    color : white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(32, 59, 54);
+    width : 50vw;
+    height: 50vh;
+    z-index: 10;
+    gap : 20px;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    box-shadow: 15px 15px 15px rgb(94, 232, 200);
+}
+
+.delete button{
+    cursor: pointer;
+}
