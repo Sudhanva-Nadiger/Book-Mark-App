@@ -1,5 +1,5 @@
 .card-wrapper{
-    background-color: white;
+    background-color: rgb(201, 245, 241);
     box-shadow: 2px 2px 15px rgb(78, 77, 77);
     width : 220px;
     height : 260px;
@@ -99,6 +99,19 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
+.operation-button:nth-child(1):hover{
+    background-color: aquamarine;
+}
+
+.operation-button:nth-child(2):hover{
+    background-color: rgb(127, 255, 246);
+}
+
+.operation-button:nth-child(3):hover{
+    background-color: rgb(255, 14, 14);
+}
+
 
 .operation-button:hover{
     transform: translateX(-1px) scale(1.1);

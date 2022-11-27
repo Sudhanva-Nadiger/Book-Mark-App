@@ -171,8 +171,8 @@ input{
 }
 
 @media only screen and (max-width: 850px){
-  .nav-bar h1{
-    display: none;
+  .navBar h1{
+    opacity: 0;
   }
 
   .newbookmark{

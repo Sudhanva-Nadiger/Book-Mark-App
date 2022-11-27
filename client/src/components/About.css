@@ -1,0 +1,21 @@
+.about-page{
+    position: absolute;
+    opacity: 0;
+    right:-100%;
+    width : 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:darkcyan;
+    transition: all 0.5s ease-in-out;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 100;
+    top: 10%;
+}
+
+.about-page.show-about{
+    opacity: 1;
+    right : 2%;
+}
