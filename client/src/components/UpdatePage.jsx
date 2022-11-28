@@ -9,6 +9,7 @@ import "../App.css"
 const UpdatePage = ({ title, tags, link, description, setOpen, id, cards, setCards }) => {
 
     const [newtitle, setNewTitle] = useState(title);
+    console.log(newtitle);
     const [newtagName, setNewTagName] = useState("")
     const [newLink, setNewLink] = useState(link)
     const [newDescription, setNewDescription] = useState(description);
@@ -31,7 +32,7 @@ const UpdatePage = ({ title, tags, link, description, setOpen, id, cards, setCar
             prev[objIndex] = updatedCard
             return [...prev]
         })
-        console.log("hqsdbjqh");
+
         setOpen(false)
     }
 

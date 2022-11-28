@@ -66,7 +66,8 @@ const BookMarkCard = ({cards,setCards,title, tags, url, description,id}) => {
                 </div>
                 {!showModal && <span onClick={() => setshowModal(true)} className='view-more'>․․․view more</span>}
                 <div className="card-info">
-                    <p>{description.slice(0, 100)}</p>
+                    <p>{!showModal && description.slice(0, 70)}</p>
+                    <p>{showModal && description}</p>
                     {!showModal && <span onClick={() => setshowModal(true)} className='view-more'>․․․view more</span>}
                 </div>
                 <div className="card-url">

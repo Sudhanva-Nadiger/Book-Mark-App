@@ -4,11 +4,15 @@ import "./delete.css"
 
 const DeleteConformation = ({id,setShowDeletePage,setCards,cards}) => {
   function handleYesClick(e){
+    console.log(id + "***************************************");
     Axios.delete(`http://localhost:3001/delete/${id}`)
     let arr = cards.filter((card)=>{
-      return card._id !== id;
+       if(card._id !== id){
+        return card
+       }
+
+       return null;
     })
-    console.log(arr);
     setCards(arr)
     setShowDeletePage(false)
   }

@@ -28,11 +28,11 @@ const InputCard = ({ setOpen, setCards }) => {
     setTags([])
     setLink("")
     setTagName("")
-    setCards((prev)=>{
-      return [...prev,{bookmarkTitle: title,
-        bookmarkTags: tags,
-        bookmarkLink: link,
-        bookmarkDescription: description,}]
+    
+    Axios.get("http://localhost:3001/read").then((response) => {
+      console.log(response.data);
+      setCards(response.data);
+      console.log("new things added");
     })
   }
 

@@ -22,6 +22,14 @@ function App() {
       console.log("success");
     })
   }, [])
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/read").then((response) => {
+      setCards(response.data);
+      console.log("success");
+    })
+  }, [open])
+
   return (
     <div className="App">
       <NavBar setShowSearchResults={setShowSearchResults} setSearchQuery={searchQuery}/>
