@@ -6,7 +6,7 @@ import TagBox from './TagBox'
 import Axios from "axios"
 import "../App.css"
 
-const UpdatePage = ({ title, tags, link, description, setOpen, id }) => {
+const UpdatePage = ({ title, tags, link, description, setOpen, id, cards, setCards }) => {
 
     const [newtitle, setNewTitle] = useState(title);
     const [newtagName, setNewTagName] = useState("")
@@ -26,6 +26,12 @@ const UpdatePage = ({ title, tags, link, description, setOpen, id }) => {
             updatedCard : updatedCard
         })
 
+        let objIndex = cards.findIndex((obj => obj._id === id));
+        setCards((prev)=>{
+            prev[objIndex] = updatedCard
+            return [...prev]
+        })
+        console.log("hqsdbjqh");
         setOpen(false)
     }
 

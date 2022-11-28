@@ -293,9 +293,28 @@ input{
 }
 
 .bookmarksCards-container{
-  
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.backtoHome{
+  background-color: rgb(37, 122, 104);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.showsearch{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap :10px
 }

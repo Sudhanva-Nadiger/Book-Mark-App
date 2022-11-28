@@ -12,27 +12,45 @@ import Axios from 'axios';
 function App() {
   const [open, setOpen] = useState(false);
   const [cards, setCards] = useState([]);
-
+  const [searchResult, setSearchResult] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+  const [searchQuery , setSearchQuery] = useState("");
+    
   useEffect(() => {
     Axios.get("http://localhost:3001/read").then((response) => {
       setCards(response.data);
       console.log("success");
     })
   }, [])
-
   return (
     <div className="App">
-      <NavBar />
+      <NavBar setShowSearchResults={setShowSearchResults} setSearchQuery={searchQuery}/>
       <AddBookMark setOpen={setOpen} />
-      <SearchBar />
+      <SearchBar cards={cards} setSearchResult={setSearchResult} setShowSearchResults={setShowSearchResults} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <div className={open ? 'helper-div show' : "helper-div"} style={{ margin: "0", left: "0", position: "absolute" }}> <InputCard setOpen={setOpen} setCards={setCards} /> </div>
-      <div className="bookmarksCards-container">
-        {
-          cards.map((card,index)=>{
-            return <BookMarkCard key={index} title={card.bookmarkTitle} tags={card.bookmarkTags} url={card.bookmarkLink} description={card.bookmarkDescription} id = {card._id}/>
-          })
-        }
-      </div>
+      {
+        !showSearchResults &&
+         <div className="bookmarksCards-container">
+          {
+            cards.map((card, index) => {
+              return <BookMarkCard key={index} cards={cards} setCards={setCards} title={card.bookmarkTitle} tags={card.bookmarkTags} url={card.bookmarkLink} description={card.bookmarkDescription} id={card._id} />
+            })
+          }
+        </div>
+      }
+      {
+        showSearchResults &&
+        <div className="showsearch">
+          <button className='backtoHome' onClick={()=>{setShowSearchResults(false); setSearchQuery("")}}>Back to home Page</button>
+          <div className="bookmarksCards-container">
+            {
+              searchResult.map((card, index) => {
+                return <BookMarkCard cards={cards} setCards={setCards} key={index} title={card.bookmarkTitle} tags={card.bookmarkTags} url={card.bookmarkLink} description={card.bookmarkDescription} id={card._id} />
+              })
+            }
+          </div>
+        </div>
+      }
     </div>
   );
 }

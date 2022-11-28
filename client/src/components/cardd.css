@@ -13,15 +13,17 @@
     margin: 20px;
     overflow: hidden;
     transition: all 0.2s linear;
+    border-radius: 10px;
 }
 
 .card-tags{
     display: flex;
     align-items: center;
+    height: 15px;
     justify-content: space-around;
-    flex-wrap: nowrap;
     gap:5px;
     padding: 2px;
+    margin-top: 10px;
 }
 
 .card-info{
