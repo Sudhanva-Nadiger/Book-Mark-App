@@ -1,15 +1,15 @@
-Bookmark App
+# Bookmark App
 
 This website aims to build the bookmark app which gives the service of saving a site’s website with title, multiple tags, description and site visiting link, which helps the user to save their favorite web site or frequently used website information at one place without having to type and search it again and again. This app also gives the functionality of updating and deleting bookmarks, with searching of bookmarks by title as  well as tags.
 
-- Technologies used : 
+# Technologies used : 
 1) Front-End : React JS, CSS
 1) Back-End : Node JS,Express JS
 1) DataBase : MongoDB
 
 - GitHub Link : <https://github.com/Sudhanva-Nadiger/Book-Mark-App>
 
-Screenshots Of the The UI and Functionalities :
+# Screenshots Of the The UI and Functionalities :
 
 - The Home page
 
